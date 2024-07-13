@@ -1,5 +1,3 @@
-Of course! Here is the `README.md` translated into Portuguese:
-
 ### `README.md`
 
 # Educational File Encryption and Decryption Project
