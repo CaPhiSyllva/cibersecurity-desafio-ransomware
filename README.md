@@ -1,63 +1,57 @@
-Claro! Aqui está o `README.md` atualizado sem os scripts incluídos:
+Of course! Here is the `README.md` translated into Portuguese:
 
 ### `README.md`
 
 ```markdown
-# Projeto Educacional de Criptografia e Descriptografia de Arquivos
+# Educational File Encryption and Decryption Project
 
-Este projeto demonstra a criptografia e descriptografia de arquivos usando o módulo `pyaes` em Python. **Atenção: Este projeto foi desenvolvido exclusivamente para fins educacionais. A prática de hacking é ilegal e antiética quando realizada fora de um ambiente controlado e sem o consentimento adequado.**
+This project demonstrates file encryption and decryption using the `pyaes` module in Python. **Note: This project was developed exclusively for educational purposes. Hacking practices are illegal and unethical when conducted outside of a controlled environment and without proper consent.**
 
-## Objetivo
+## Project Structure
 
-O objetivo deste projeto é fornecer um exemplo prático de como a criptografia e a descriptografia de arquivos podem ser implementadas, ajudando a entender os conceitos básicos de segurança de dados. Este conhecimento deve ser usado para proteger sistemas e informações, não para atividades maliciosas.
+- `encrypter.py`: Script to encrypt a file.
+- `decrypter.py`: Script to decrypt an encrypted file.
+- `README.md`: This documentation file.
 
-## Estrutura do Projeto
+## Requirements
 
-- `encrypter.py`: Script para criptografar um arquivo.
-- `decrypter.py`: Script para descriptografar um arquivo criptografado.
-- `README.md`: Este arquivo de documentação.
+- Python 3.6 or higher
+- `pyaes` module
 
-## Requisitos
+## Installation
 
-- Python 3.6 ou superior
-- Módulo `pyaes`
+1. Clone this repository or download the files.
+2. Navigate to the project directory.
+3. Install the `pyaes` module using pip:
 
-## Instalação
+```sh
+pip install pyaes
+```
 
-1. Clone este repositório ou faça o download dos arquivos.
-2. Navegue até o diretório do projeto.
-3. Instale o módulo `pyaes` usando o pip:
+## Usage
 
-   ```sh
-   pip install pyaes
-   ```
+### Encryption
 
-## Uso
+1. Make sure you have a file named `test.txt` or change the file name in the `encrypter.py` script.
+2. Run the encryption script:
 
-### Criptografia
+```sh
+python encrypter.py
+```
 
-1. Certifique-se de que você tenha um arquivo chamado `teste.txt` ou altere o nome do arquivo no script `encrypter.py`.
-2. Execute o script de criptografia:
+3. The `test.txt` file will be encrypted, and a new file named `test.txt.ransomwaretroll` will be created.
 
-   ```sh
-   python encrypter.py
-   ```
+### Decryption
 
-3. O arquivo `teste.txt` será criptografado e um novo arquivo chamado `teste.txt.ransomwaretroll` será criado.
+1. Ensure that the `test.txt.ransomwaretroll` file is present in the directory.
+2. Run the decryption script:
 
-### Descriptografia
+```sh
+python decrypter.py
+```
 
-1. Certifique-se de que o arquivo `teste.txt.ransomwaretroll` está presente no diretório.
-2. Execute o script de descriptografia:
+3. The `test.txt.ransomwaretroll` file will be decrypted, and a new file named `test.txt` will be created.
 
-   ```sh
-   python decrypter.py
-   ```
+## Important Note
 
-3. O arquivo `teste.txt.ransomwaretroll` será descriptografado e um novo arquivo chamado `teste.txt` será criado.
-
-## Nota Importante
-
-Este projeto foi criado exclusivamente para fins educacionais e de conscientização. A criação, uso e distribuição de ransomware ou qualquer outro tipo de malware é ilegal e antiético. Use o conhecimento adquirido para melhorar a segurança de sistemas e proteger dados. Sempre obtenha permissão antes de testar ou executar qualquer técnica de segurança em sistemas que não são de sua propriedade.
-
-Este `README.md` fornece todas as informações necessárias sobre o projeto, incluindo sua finalidade educacional, como instalar e usar os scripts, e uma nota importante sobre o uso ético e legal do conhecimento adquirido.
+This project was created exclusively for educational and awareness purposes. The creation, use, and distribution of ransomware or any other type of malware is illegal and unethical. Use the knowledge gained to improve system security and protect data. Always obtain permission before testing or executing any security techniques on systems that are not your property.
