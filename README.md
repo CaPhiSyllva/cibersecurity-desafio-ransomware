@@ -2,7 +2,6 @@ Of course! Here is the `README.md` translated into Portuguese:
 
 ### `README.md`
 
-```markdown
 # Educational File Encryption and Decryption Project
 
 This project demonstrates file encryption and decryption using the `pyaes` module in Python. **Note: This project was developed exclusively for educational purposes. Hacking practices are illegal and unethical when conducted outside of a controlled environment and without proper consent.**
